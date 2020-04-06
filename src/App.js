@@ -7,6 +7,8 @@ import AddTodo from './components/AddTodo';
 import About from './components/pages/About';
 // import {v4 as uuid} from 'uuid';
 import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 import './App.css';
 

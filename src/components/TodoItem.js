@@ -4,11 +4,13 @@ import PropTypes from 'prop-types';
 export class TodoItem extends Component {
     getStyle = () => {
         return {
-            background: '#f4f4f4',
-            padding: '10px',
-            borderBottom: '1px #ccc dotted',
+            paddingTop: '12px',
+            fontSize: '18px',
+            fontFamily: 'Helvetica, sans-serif',
+            borderRadius: '2px',
             // ternary operator
-            textDecoration: this.props.todo.completed ? 'line-through' : 'none'
+            textDecoration: this.props.todo.completed ? 'line-through' : 'none',
+            color: this.props.todo.completed ? 'red' : 'black'
         }
     }
 
@@ -16,12 +18,12 @@ export class TodoItem extends Component {
         // destructuring, to allow reference without this.props.todo
         const { id, title } = this.props.todo;
         return (
-            <div style={this.getStyle()}>
+            <div className="bg-light border border-primary border-top-0 border-left-0 border-right-0" style={this.getStyle()}>
                 <p>
-                    <input type="checkbox" onChange={this.props.markComplete.bind
+                    <input className="ml-2" type="checkbox" onChange={this.props.markComplete.bind
                     (this, id)} /> {' '}
                     { title }
-                    <button onClick={this.props.delTodo.bind(this, id)} style={btnStyle}>x</button>
+                    <button className="btn btn-outline-danger" style={btnStyle} onClick={this.props.delTodo.bind(this, id)}>x</button>
                 </p>
             </div>
         )
@@ -36,13 +38,9 @@ TodoItem.propTypes = {
 }
 
 const btnStyle = {
-    background: '#ff0000',
-    color: '#fff',
-    border: 'none',
-    padding: '5px 9px',
-    borderRadius: '25%',
-    cursor: 'pointer',
-    float: 'right'
+    padding: '0px 7px',
+    marginRight: '5px',
+    float: 'right',
 }
 
 // Style

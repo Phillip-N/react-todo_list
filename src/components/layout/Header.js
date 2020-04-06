@@ -3,18 +3,19 @@ import { Link } from 'react-router-dom';
 
 function Header() {
     return (
-        <header style={headerStyle}>
-            <h1>TodoList</h1>
+        <header className="bg-primary" style={headerStyle}>
+            <h1>Todo List</h1>
             <Link style={linkStyle} to="/">Home</Link> | <Link style={linkStyle} to="/about">About</Link>
         </header>
     )
 }
 
 const headerStyle = {
-    background: '#333',
+    borderRadius: '8px 8px 0px 0px',
     color: '#fff',
     textAlign: 'center',
-    padding: '10px'
+    padding: '10px',
+    marginTop: '20px'
 }
 
 const linkStyle = {

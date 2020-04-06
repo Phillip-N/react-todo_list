@@ -17,9 +17,10 @@ export class AddTodo extends Component {
 
     render() {
         return (
-            <form onSubmit={this.onSubmit} style= {{ display: 'flex' }}>
+            <form onSubmit={this.onSubmit} style={formStyle}>
                 <input 
                     type="text" 
+                    className="form-control"
                     name="title" 
                     style = {{ flex: '10', padding: '5px' }}
                     placeholder="Add Todo..."
@@ -29,13 +30,23 @@ export class AddTodo extends Component {
                 <input 
                     type="submit"
                     value="Submit"
-                    className="btn"
+                    className="btn btn-outline-primary"
                     style={{flex: '1'}}
                 />
             </form>
         )
     }
 }
+
+
+const formStyle = {
+    display: 'flex',
+    marginTop: '5px',
+    marginBottom: '5px',
+}
+
+
+
 
 // PropTypes
 AddTodo.propTypes = {
